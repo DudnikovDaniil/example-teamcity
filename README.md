@@ -36,25 +36,25 @@
 
 ###  Список виртуальных машин в Yandex Cloud  
 **Описание:** Показаны 3 запущенные VM: `teamcity-server`, `teamcity-agent`, `nexus-vm`. Все имеют внешние IP и статус `RUNNING`.  
-![01_yc_vm_list](01_yc_vm_list.png)
+![01_yc_vm_list](screenshots/01_yc_vm_list.png)
 
 ---
 
 ###  Главная страница TeamCity  
 **Описание:** Виден созданный проект `Create project` и успешные сборки. Артефакты сборки отображаются в интерфейсе. 
-![02_teamcity_main](02_teamcity_main.png)
+![02_teamcity_main](screenshots/02_teamcity_main.png)
 
 ---
 
 ###  Подключенный агент  
 **Описание:** Агент с именем `ip_51.250.94.61` успешно авторизован и находится в статусе `Connected`. Готов к выполнению сборок.  
-![03_agent_connected](03_agent_connected.png)
+![03_agent_connected](screenshots/03_agent_connected.png)
 
 ---
 
 ###  Шаги сборки (общий вид)  
 **Описание:** В проекте настроены 2 шага: `Maven test for feature branches` и `Maven build`. Каждый шаг имеет свои условия выполнения.  
-![04_build_steps](04_build_steps.png)
+![04_build_steps](screenshots/04_build_steps.png)
 
 ---
 
@@ -63,40 +63,40 @@
 - Для `feature/*` → `clean package`
 - Для `master` → `clean deploy` 
 Это гарантирует, что в мастер деплоятся артефакты, а в фича-ветках только тесты. 
-![06_build_steps_conditions](06_build_steps_conditions.png)
+![06_build_steps_conditions](screenshots/06_build_steps_conditions.png)
 
 ---
 
 ###  Собранные артефакты (jar-файлы)  
 **Описание:** После сборки в артефактах появились `plaindoll-0.0.2.jar` и `original-plaindoll-0.0.2.jar`. Артефакты опубликованы в TeamCity.  
-![08_artifacts](08_artifacts.png)
+![08_artifacts](screenshots/08_artifacts.png)
 
 ---
 
 ###  Nexus — главная страница  
 **Описание:** Nexus успешно запущен и доступен по адресу `http://89.169.155.32:8081`. Видна панель управления и уведомления.  
-![09_nexus_main](09_nexus_main.png)
+![09_nexus_main](screenshots/09_nexus_main.png)
 
 ---
 
 ###  Артефакт в Nexus (maven-releases)  
 **Описание:** В репозитории `maven-releases` появился артефакт `plaindoll-0.0.2.jar`. Это подтверждает успешный деплой из TeamCity.  
-![10_nexus_repositories](10_nexus_repositories.png)
+![10_nexus_repositories](screenshots/10_nexus_repositories.png)
 
 ---
 
 ###  Успешная сборка ветки `feature/add_reply`  
 **Описание:** Сборка #10 выполнена для ветки `feature/add_reply`. Все 6 тестов пройдены успешно. Метод с репликой "hunter" работает корректно.  
-![11_feature_build_success](11_feature_build_success.png)
+![11_feature_build_success](screenshots/11_feature_build_success.png)
 
 ---
 
 ###  Слияние `feature/add_reply` → `master`  
 **Описание:** Ветка `feature/add_reply` успешно влита в `master`. Коммит `9d5339a` содержит изменения: добавлен метод `getHunterReply()` и тест для него.  
-![12_merge_commits](12_merge_commits.png)
+![12_merge_commits](screenshots/12_merge_commits.png)
 
 ---
 
 ##  Структура проекта
 
-![13_project_structure](13_project_structure.png)
+![13_project_structure](screenshots/13_project_structure.png)
